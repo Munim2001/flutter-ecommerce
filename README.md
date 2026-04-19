@@ -1,4 +1,4 @@
-# craftybay
+# flutter-ecommerce
 
 Flutter e-commerce project for Ostad batch 13.
 
@@ -24,8 +24,3 @@ example: fvm install 3.38.9
 ## version setup for project
 fvm use version_name
 example: fvm use 3.41.0
-
-Note: new project download kore run korte caile.
-just type: fvm use
-
-project je version ai version auto setup hobe. version install na thakle download korte bolbe abong auto install hobe. 
