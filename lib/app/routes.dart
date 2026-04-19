@@ -1,0 +1,37 @@
+import 'package:flutter/material.dart';
+import '../features/auth/presentation/screen/sign_in_screen.dart';
+import '../features/auth/presentation/screen/sign_up_screen.dart';
+import '../features/auth/presentation/screen/splash_screen.dart';
+import '../features/auth/presentation/screen/verify_otp_screen.dart';
+import '../features/product/presentation/screens/product_details_screen.dart';
+import '../features/product/presentation/screens/product_list_screen.dart';
+import '../features/review/presentation/screen/customer_review_screen.dart';
+import '../features/shared/presentation/screens/main_nav_holder_screen.dart';
+
+class Routes {
+  static Route<dynamic> onGenerateRoute(RouteSettings settings) {
+   late Widget widget;
+
+    switch (settings.name) {
+      case SplashScreen.name:
+        widget = SplashScreen();
+      case SignUpScreen.name:
+        widget = SignUpScreen();
+      case SignInScreen.name:
+        widget = SignInScreen();
+        case VerifyOtpScreen.name:
+          final email = settings.arguments as String;
+      widget = VerifyOtpScreen(email: email,);
+      case MainNavHolderScreen.name:
+        widget = MainNavHolderScreen();
+      case ProductListScreen.name:
+        final categoryName = settings.arguments as String;
+        widget = ProductListScreen(categoryName: categoryName,);
+      case ProductDetailsScreen.name:
+        widget = ProductDetailsScreen();
+        case CustomerReviewScreen.name:
+        widget = CustomerReviewScreen();
+    }
+    return  MaterialPageRoute(builder: (context) => widget);
+  }
+}
